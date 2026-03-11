@@ -1,11 +1,18 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "World-Scan NPU"
+  description:  "AI Graphics Refinement Processor"
+  author:       "sivaprabha679-gif"
+  how_it_works: "Uses 180k transistors for texture refinement and AA."
+  how_to_test:  "Feed data to ui_in and check uo_out."
+
+# THESE MUST MATCH YOUR VERILOG PINS
+# DO NOT CHANGE THESE NAMES
+  ui_in:      [raw_0, raw_1, raw_2, raw_3, raw_4, raw_5, raw_6, raw_7]
+  uo_out:     [pix_0, pix_1, pix_2, pix_3, pix_4, pix_5, pix_6, pix_7]
+  uio_in:     [mode, llm_en, aa_en, move, rsvd, rsvd, rsvd, rsvd]
+  uio_out:    [pwr_led, hsync, clk_mon, rsvd, rsvd, rsvd, rsvd, rsvd]
+  uio_oe:     [0, 0, 0, 0, 0, 0, 0, 0]
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
